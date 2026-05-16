@@ -7,9 +7,6 @@
 #include <set>
 #include <vector>
 #include <climits>
-#include <cstdint>
-#include <benchmark/benchmark.h>
-
 
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
