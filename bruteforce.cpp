@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <cmath>
 #include <set>
+#include <vector>
 
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
@@ -25,12 +26,36 @@ std::ifstream file(filename);
 
 long calculateNumOfPINs(long N, long K, long P){
     long output = 0;
-    std::set<std::set<long>> allOptions;
-    long numOfOptions = (long)pow(N,P);
-    
-    for (long i = 0; i < numOfOptions; i++){
-        
+    long long numOfOptions = (long)pow(N,P);
+
+    if (numOfOptions == 0){
+        numOfOptions = INT_MAX;
     }
+    
+    long long count = 0;
+
+    for (long i = 0; i < numOfOptions; i++){
+        long long temp = i;
+        std::vector<int> pin(P);
+
+        long long ost;
+
+        for (int j = 0; j < P; j++) {
+            pin[j] = temp % N;
+            temp = temp/N;
+        }
+
+        std::set<int> razlicne(pin.begin(), pin.end());
+
+        if (razlicne.size() >= K) {
+            count++;
+            if (count%1000 == 0){
+                std::cout <<"stevilo resitev je: "<<count<<std::endl;
+            }
+        }
+    }
+
+    output = count;
     
     return output;
 }
@@ -38,7 +63,7 @@ long calculateNumOfPINs(long N, long K, long P){
 int main() {
     
     std::fstream file;
-    for (size_t i = 0; i < 20; i++)
+    for (size_t i = 1; i < 20; i++)
     {
         std::ostringstream fileName;
         fileName << "./testni_primeri/" << std::setw(2) << std::setfill('0') << i << ".in";
