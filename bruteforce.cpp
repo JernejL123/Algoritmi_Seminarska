@@ -7,6 +7,7 @@
 #include <set>
 #include <vector>
 #include <climits>
+#include <chrono>
 
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
@@ -21,7 +22,16 @@ std::ifstream file(filename);
     file >> N >> K >> P;
     //std::cout << "N: " << N << " K: " << K << " P: " << P << std::endl;
 
-    std::cout << calculateNumOfPINs(N,K,P) << std::endl; 
+    auto start = std::chrono::high_resolution_clock::now();
+
+    std::cout <<"stevilo ok kombinacij: " << calculateNumOfPINs(N,K,P) << std::endl; 
+
+    auto finish = std::chrono::high_resolution_clock::now();
+
+
+    auto milliseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish-start);
+    std::cout<<"cas delovanja: " << milliseconds.count() << "ms\n"<<std::endl;
+    
     file.close();
 }
 
@@ -29,7 +39,7 @@ long calculateNumOfPINs(long N, long K, long P){
     long output = 0;
     uint64_t numOfOptions = (long)pow(N,P);
 
-    //std::cout << "St vseh kombinacij: " << numOfOptions<<std::endl;
+    std::cout << "St vseh kombinacij: " << numOfOptions<<std::endl;
     
     uint64_t count = 0;
 
@@ -72,6 +82,7 @@ int main() {
     {
         std::ostringstream fileName;
         fileName << "./testni_primeri/" << std::setw(2) << std::setfill('0') << i << ".in";
+        std::cout << fileName.str()<<std::endl;
         read_file(fileName.str());
     }
 
