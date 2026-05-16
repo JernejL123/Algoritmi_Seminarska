@@ -14,7 +14,7 @@ long calculateNumOfPINs(long N, long K, long P);
 void read_file(std::string filename){
 std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cout << "Napaka pri odpiranju fajla" << std::endl;
+        //std::cout << "Napaka pri odpiranju fajla" << std::endl;
         file.close(); //Misja hack: "Če fajl ni odprt ga zapri lol"
         return;
     }
@@ -27,19 +27,17 @@ std::ifstream file(filename);
 
 long calculateNumOfPINs(long N, long K, long P){
     long output = 0;
-    long long numOfOptions = (long)pow(N,P);
+    uint64_t numOfOptions = (long)pow(N,P);
 
-    std::cout<< "stevilo vseh kombinacij: "<< numOfOptions<<std::endl;
-
-    std::cout<<"Stevilo vseh moznih kombinacij: "<<numOfOptions<<std::endl;
+    //std::cout << "St vseh kombinacij: " << numOfOptions<<std::endl;
     
-    long long count = 0;
+    uint64_t count = 0;
 
     for (long i = 0; i < numOfOptions; i++){
-        long long temp = i;
+        uint64_t temp = i;
         std::vector<int> pin(P);
 
-        long long ost;
+        uint64_t ost;
 
         for (int j = 0; j < P; j++) {
             pin[j] = temp % N;
@@ -59,8 +57,11 @@ long calculateNumOfPINs(long N, long K, long P){
        
     }
 
-    output = count%((10^9) + 7);
+    int modul = pow(10,9) - 7;
+
+    output = (count%modul);
     
+
     return output;
 }
 
