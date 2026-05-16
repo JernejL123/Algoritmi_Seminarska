@@ -48,7 +48,6 @@ long calculateNumOfPINs(long N, long K, long P){
 
         std::set<int> razlicne(pin.begin(), pin.end());
 
-        /*
          if (razlicne.size() >= K) {
             count++;
             /*
@@ -57,7 +56,6 @@ long calculateNumOfPINs(long N, long K, long P){
             }
             */
         }
-        */
        
     }
 
