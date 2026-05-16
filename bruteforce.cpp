@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <fstream>
 #include <fstream>
 #include <sstream>
@@ -7,6 +7,9 @@
 #include <set>
 #include <vector>
 #include <climits>
+#include <cstdint>
+#include <benchmark/benchmark.h>
+
 
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
@@ -52,7 +55,7 @@ long calculateNumOfPINs(long N, long K, long P){
             if (count%1000 == 0){
                 std::cout <<"stevilo resitev je: "<<count<<std::endl;
             }
-            */
+
         }
        
     }
@@ -76,4 +79,4 @@ int main() {
     }
 
     return 0;
-}
+}*/
