@@ -29,10 +29,8 @@ long calculateNumOfPINs(long N, long K, long P){
     long output = 0;
     long long numOfOptions = (long)pow(N,P);
 
-    if (numOfOptions == 0){
-        numOfOptions = INT_MAX;
-    }
-    
+    std::cout<< "stevilo vseh kombinacij: "<< numOfOptions<<std::endl;
+
     long long count = 0;
 
     for (long i = 0; i < numOfOptions; i++){
@@ -48,15 +46,18 @@ long calculateNumOfPINs(long N, long K, long P){
 
         std::set<int> razlicne(pin.begin(), pin.end());
 
-        if (razlicne.size() >= K) {
+        /*
+         if (razlicne.size() >= K) {
             count++;
             if (count%1000 == 0){
                 std::cout <<"stevilo resitev je: "<<count<<std::endl;
             }
         }
+        */
+       
     }
 
-    output = count;
+    output = count%((10^9) + 7);
     
     return output;
 }
