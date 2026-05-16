@@ -1,2 +1,8 @@
 .vscode/
 build/
+bruteforce.exe
+bruteforce.ilk
+bruteforce.obj
+bruteforce.pdb
+.idea/
+vc140.pdb

@@ -6,6 +6,7 @@
 #include <cmath>
 #include <set>
 #include <vector>
+#include <climits>
 
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
