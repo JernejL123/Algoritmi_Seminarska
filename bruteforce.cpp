@@ -1,5 +1,5 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 #include <fstream>
 #include <sstream>
 #include <iomanip>
@@ -31,6 +31,8 @@ long calculateNumOfPINs(long N, long K, long P){
 
     std::cout<< "stevilo vseh kombinacij: "<< numOfOptions<<std::endl;
 
+    std::cout<<"Stevilo vseh moznih kombinacij: "<<numOfOptions<<std::endl;
+    
     long long count = 0;
 
     for (long i = 0; i < numOfOptions; i++){
@@ -49,9 +51,11 @@ long calculateNumOfPINs(long N, long K, long P){
         /*
          if (razlicne.size() >= K) {
             count++;
+            /*
             if (count%1000 == 0){
                 std::cout <<"stevilo resitev je: "<<count<<std::endl;
             }
+            */
         }
         */
        
