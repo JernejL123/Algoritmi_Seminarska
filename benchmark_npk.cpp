@@ -11,7 +11,7 @@
 // ==============================================================
 //  NASTAVI POT DO CSV
 // ==============================================================
-static const std::string CSV_PATH = "C:/Users/jerne/Documents/ATURP_Seminarska/benchmark_results.csv";
+static const std::string CSV_PATH = "C:/Users/jerne/Documents/ATURP_Seminarska/benchmark_optimal_results.csv";
 
 // ==============================================================
 //  RANGES
