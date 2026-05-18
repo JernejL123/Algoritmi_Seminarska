@@ -7,7 +7,6 @@
 #include <set>
 #include <vector>
 #include <climits>
-
 long N,K,P;
 long calculateNumOfPINs(long N, long K, long P);
 
@@ -27,47 +26,41 @@ std::ifstream file(filename);
 long calculateNumOfPINs(long N, long K, long P){
     long output = 0;
     uint64_t numOfOptions = (long)pow(N,P);
-
     //std::cout << "St vseh kombinacij: " << numOfOptions<<std::endl;
-    
     uint64_t count = 0;
 
     for (long i = 0; i < numOfOptions; i++){
         uint64_t temp = i;
         std::vector<int> pin(P);
 
-        uint64_t ost;
-
         for (int j = 0; j < P; j++) {
             pin[j] = temp % N;
             temp = temp/N;
         }
-
         std::set<int> razlicne(pin.begin(), pin.end());
 
          if (razlicne.size() >= K) {
             count++;
         }
-       
     }
-
     int modul = pow(10,9) - 7;
-
     output = (count%modul);
-    
-
     return output;
 }
 
-int main() {
-    
-    std::fstream file;
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        std::cout << "Napaka: ./optimal <file_name>" << std::endl;
+    }
+
+    /*std::fstream file;
     for (size_t i = 1; i < 20; i++)
     {
         std::ostringstream fileName;
         fileName << "./testni_primeri/" << std::setw(2) << std::setfill('0') << i << ".in";
         read_file(fileName.str());
-    }
+    }*/
+    read_file(argv[1]);
 
     return 0;
 }

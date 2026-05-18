@@ -7,8 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(benchmark CONFIG REQUIRED)
 
-add_executable(bruteforce bruteforce.cpp
-        benchmark_npk.cpp)
+add_executable(bruteforce bruteforce.cpp)
 
 target_link_libraries(bruteforce PRIVATE benchmark::benchmark benchmark::benchmark_main)
 
