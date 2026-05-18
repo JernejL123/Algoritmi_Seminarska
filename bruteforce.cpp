@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <fstream>
 #include <sstream>
@@ -15,7 +15,6 @@ void read_file(std::string filename){
 std::ifstream file(filename);
     if (!file.is_open()) {
         //std::cout << "Napaka pri odpiranju fajla" << std::endl;
-        file.close(); //Misja hack: "Če fajl ni odprt ga zapri lol"
         return;
     }
     file >> N >> K >> P;
@@ -48,11 +47,6 @@ long calculateNumOfPINs(long N, long K, long P){
 
          if (razlicne.size() >= K) {
             count++;
-            /*
-            if (count%1000 == 0){
-                std::cout <<"stevilo resitev je: "<<count<<std::endl;
-            }
-
         }
        
     }
@@ -76,4 +70,4 @@ int main() {
     }
 
     return 0;
-}*/
+}
