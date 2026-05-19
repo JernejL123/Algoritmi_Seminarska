@@ -50,7 +50,7 @@ long calculateNumOfPINs(long N, long K, long P){
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        std::cout << "Napaka: ./optimal <file_name>" << std::endl;
+        std::cout << "Napaka: ./bruteforce <file_name>" << std::endl;
     }
 
     /*std::fstream file;

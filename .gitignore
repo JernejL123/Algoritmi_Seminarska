@@ -9,3 +9,4 @@ build/
 vc140.pdb
 cmake-build-release/
 cmake-build-debug/
+*.zip
