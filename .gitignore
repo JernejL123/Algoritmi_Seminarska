@@ -4,6 +4,7 @@ build/
 *.ilk
 *.obj
 *.pdb
+~*.*
 .idea/
 vc140.pdb
 cmake-build-release/
